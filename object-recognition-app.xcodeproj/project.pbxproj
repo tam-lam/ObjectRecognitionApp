@@ -12,6 +12,8 @@
 		B861314D22B1026B0033AADF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B861314B22B1026B0033AADF /* Main.storyboard */; };
 		B861314F22B1026C0033AADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B861314E22B1026C0033AADF /* Assets.xcassets */; };
 		B861315222B1026C0033AADF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B861315022B1026C0033AADF /* LaunchScreen.storyboard */; };
+		B861315F22B10B350033AADF /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861315E22B10B350033AADF /* RoundedShadowView.swift */; };
+		B861316122B10DDD0033AADF /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861316022B10DDD0033AADF /* RoundedShadowButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		B861314E22B1026C0033AADF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B861315122B1026C0033AADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B861315322B1026C0033AADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B861315E22B10B350033AADF /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		B861316022B10DDD0033AADF /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		B861315A22B104BA0033AADF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B861315E22B10B350033AADF /* RoundedShadowView.swift */,
+				B861316022B10DDD0033AADF /* RoundedShadowButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 			files = (
 				B861314A22B1026B0033AADF /* CameraVC.swift in Sources */,
 				B861314822B1026B0033AADF /* AppDelegate.swift in Sources */,
+				B861315F22B10B350033AADF /* RoundedShadowView.swift in Sources */,
+				B861316122B10DDD0033AADF /* RoundedShadowButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
