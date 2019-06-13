@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B82A8F5522B24306009E2534 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B82A8F5422B24306009E2534 /* SqueezeNet.mlmodel */; };
 		B861314822B1026B0033AADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861314722B1026B0033AADF /* AppDelegate.swift */; };
 		B861314A22B1026B0033AADF /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861314922B1026B0033AADF /* CameraVC.swift */; };
 		B861314D22B1026B0033AADF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B861314B22B1026B0033AADF /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B82A8F5422B24306009E2534 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		B861314422B1026B0033AADF /* object-recognition-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "object-recognition-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B861314722B1026B0033AADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B861314922B1026B0033AADF /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		B861314622B1026B0033AADF /* object-recognition-app */ = {
 			isa = PBXGroup;
 			children = (
+				B82A8F5422B24306009E2534 /* SqueezeNet.mlmodel */,
 				B861315B22B104C00033AADF /* Resources */,
 				B861315A22B104BA0033AADF /* View */,
 				B861315922B104A70033AADF /* Controller */,
@@ -167,6 +170,7 @@
 			files = (
 				B861314A22B1026B0033AADF /* CameraVC.swift in Sources */,
 				B861314822B1026B0033AADF /* AppDelegate.swift in Sources */,
+				B82A8F5522B24306009E2534 /* SqueezeNet.mlmodel in Sources */,
 				B861315F22B10B350033AADF /* RoundedShadowView.swift in Sources */,
 				B861316122B10DDD0033AADF /* RoundedShadowButton.swift in Sources */,
 			);
