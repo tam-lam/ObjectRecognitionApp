@@ -28,6 +28,7 @@ class CameraVC: UIViewController {
     @IBOutlet weak var identificationLbl: UILabel!
     @IBOutlet weak var captureImageView: UIImageView!
     @IBOutlet weak var flashBtn: RoundedShadowButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var photoData : Data?
     
@@ -82,6 +83,10 @@ class CameraVC: UIViewController {
     }
     
     @objc func didTapCameraView() {
+        self.cameraView.isUserInteractionEnabled = false
+        self.spinner.isHidden = false
+        self.spinner.startAnimating()
+        
         let settings = AVCapturePhotoSettings()
         settings.previewPhotoFormat = settings.embeddedThumbnailPhotoFormat
         
@@ -157,6 +162,8 @@ extension CameraVC: AVCapturePhotoCaptureDelegate {
 }
 extension CameraVC: AVSpeechSynthesizerDelegate{
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        
+        self.cameraView.isUserInteractionEnabled = true
+        self.spinner.isHidden = true
+        self.spinner.stopAnimating()
     }
 }
