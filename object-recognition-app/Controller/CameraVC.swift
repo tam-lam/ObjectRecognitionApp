@@ -33,6 +33,8 @@ class CameraVC: UIViewController {
     
     var flashControlState : FlashState = .off
     
+    var speechSynthesizer = AVSpeechSynthesizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -41,6 +43,7 @@ class CameraVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         previewLayer.frame = cameraView.bounds
+        speechSynthesizer.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,19 +98,30 @@ class CameraVC: UIViewController {
         
         for classification in results {
             if classification.confidence < 0.5{
-                self.identificationLbl.text = "I'm not sure what this is. Please try again."
+                let unknownObjectMessage = "I'm not sure what this is. Please try again."
+                self.identificationLbl.text = unknownObjectMessage
+                synthesizeSpeech(fromString: unknownObjectMessage)
                 self.confidenceLbl.text = ""
                 break
             } else{
-                self.identificationLbl.text = classification.identifier
-                self.confidenceLbl.text = "CONFIDENCE: \(Int(classification.confidence * 100))%"
+                let identification = classification.identifier
+                let confidence = Int(classification.confidence * 100)
+                self.identificationLbl.text = identification
+                self.confidenceLbl.text = "CONFIDENCE: \(confidence)%"
+                let completeSentence = "This looks like \(identification) and I'm \(confidence) percent sure."
+                synthesizeSpeech(fromString: completeSentence)
                 break
             }
         }
     }
     
+    func synthesizeSpeech(fromString string: String){
+        let speechUtterance = AVSpeechUtterance(string: string)
+        speechSynthesizer.speak(speechUtterance)
+    }
+    
     @IBAction func flashBtnWasPressed(_ sender: Any) {
-        switch flashControlState{
+        switch flashControlState{ 
         case .off:
             flashBtn.setTitle("FLASH ON", for: .normal)
             flashControlState = .on
@@ -138,6 +152,11 @@ extension CameraVC: AVCapturePhotoCaptureDelegate {
             let image = UIImage(data: photoData!)
             self.captureImageView.image = image
         }
+        
+    }
+}
+extension CameraVC: AVSpeechSynthesizerDelegate{
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         
     }
 }
